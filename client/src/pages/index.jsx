@@ -24,7 +24,7 @@ const Index = () => {
     setAnalyzing(true);
 
     try {
-      const res = await fetch("https://phishing-url-detector-thi9.onrender.com/analyze", {
+      const res = await fetch("https://phishing-url-detector-4.onrender.com/analyze", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
