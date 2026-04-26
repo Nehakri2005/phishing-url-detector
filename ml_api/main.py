@@ -3,14 +3,21 @@ import joblib
 import pandas as pd
 import re
 import math
+import os
 from urllib.parse import urlparse
 
 app = FastAPI()
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # Load everything
-model = joblib.load("model/xgboost_model.pkl")
-scaler = joblib.load("model/scaler.pkl")
-feature_names = joblib.load("model/feature_names.pkl")
+# model = joblib.load("model/xgboost_model.pkl")
+# scaler = joblib.load("model/scaler.pkl")
+# feature_names = joblib.load("model/feature_names.pkl")
+
+scaler = joblib.load(os.path.join(BASE_DIR, "model", "scaler.pkl"))
+model = joblib.load(os.path.join(BASE_DIR, "model", "xgboost_model.pkl"))
+feature_names = joblib.load(os.path.join(BASE_DIR, "model", "feature_names.pkl"))
 
 def clean_url(url):
     url = url.lower()
