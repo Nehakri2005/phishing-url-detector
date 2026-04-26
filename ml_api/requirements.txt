@@ -4,4 +4,3 @@ scikit-learn
 pandas
 numpy
 joblib
-python-3.12.3
