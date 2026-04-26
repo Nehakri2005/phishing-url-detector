@@ -33,14 +33,18 @@ const Index = () => {
       });
 
       const data = await res.json();
+      console.log("API Response",data);
+
+      const prob = Number(data.probability) || 0;
 
       //  Convert backend response → UI format
-      const level =
-        data.prediction === "Phishing"
-          ? "dangerous"
-          : data.probability > 0.5
-          ? "warning"
-          : "safe";
+      let level = "safe";
+
+       if (data.prediction === "Phishing") {
+             level = "dangerous";
+       } else if (prob > 0.5) {
+            level = "warning";
+       }
       
         const flags = data.flags && data.flags.length > 0
           ? data.flags
@@ -48,9 +52,11 @@ const Index = () => {
 
       setResult({
         level: level,
-        score: Math.round(data.probability * 100),
+        score: Math.round(prob * 100),
         flags: flags,
       });
+
+      setUrl("");
 
     } catch (err) {
       console.error("Error:", err);
@@ -167,13 +173,13 @@ const Index = () => {
             {/* Flags */}
             {result.flags && result.flags.length > 0 && (
             <div className="space-y-2">
-              <p className="text-xs uppercase text-gray-500 dark:text-gray-400 font-semibold">
+              <p className="text-sm uppercase text-grey-500 dark:text-gray-400 font-bold">
                 Why this URL is suspicious?
               </p>
 
               {result.flags.map((flag, i) => (
-                <div key={i} className="flex items-start gap-2 text-sm">
-                  <ExternalLink className="w-3.5 h-3.5 mt-0.5 text-gray-400" />
+                <div key={i} className="flex items-start gap-2 text-sm font-semibold">
+                  <ExternalLink className="w-4.5 h-4.5 mt-0.5 text-red-500 " />
                   {flag}
                 </div>
               ))}

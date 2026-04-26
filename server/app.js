@@ -26,14 +26,14 @@ app.post("/analyze", async (req, res) => {
       return res.status(400).json({ error: "URL is required" });
     }
 
-     const existing = await Url.findOne({ url: cleanUrl });
+    const existing = await Url.findOne({ url });
     if (existing) {
        console.log(" From DB");
       return res.json({
         source: "database",
         prediction: existing.prediction,
-        probability: existing.probability || 0,
-        flags: existing.flags || [],
+        probability: existing.probability ?? 0,
+        flags: existing.flags ?? [],
       });
     }
 
@@ -41,19 +41,20 @@ app.post("/analyze", async (req, res) => {
       `http://127.0.0.1:8000/predict?url=${url}`
     );
 
-    const newUrl =await Url.create({
+    await Url.create({
       url,
       prediction: response.data.prediction,
-      probability: response.data.probability,
-      flags: response.data.flags || [],
+      probability: response.data.probability ?? 0,
+      flags: response.data.flags ?? [],
       source: "model"
     });
 
     
     res.json({
+      source: "model",
       prediction: response.data.prediction,
-      probability: response.data.probability || 0,
-      flags: response.data.flags || [],
+      probability: response.data.probability ?? 0,
+      flags: response.data.flags ?? [],
     });
     
   } catch (err) {
