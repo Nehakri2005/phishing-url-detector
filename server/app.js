@@ -38,7 +38,7 @@ app.post("/analyze", async (req, res) => {
     }
 
     const response = await axios.post(
-      `http://127.0.0.1:8000/predict?url=${url}`
+      "https://phishing-url-detector-2-qucz.onrender.com/predict?url=" + url
     );
 
     await Url.create({
