@@ -159,3 +159,32 @@ Response to Frontend
 ```
 
 ---
+
+## 📊 How It Works
+
+1. User enters a URL
+2. System extracts URL features
+3. Features are sent to ML model
+4. Model predicts:
+   - Legitimate URL
+   - Phishing URL
+5. Result is displayed instantly
+
+---
+
+## 🔐 Example URL Features Extracted
+
+- URL Length
+- Presence of HTTPS
+- Number of Dots
+- Special Characters
+- IP Address Usage
+- Suspicious Keywords
+- Domain Length
+- Redirection Symbols
+
+---
+
+## ⭐ If you like this project
+
+Give this repository a ⭐ on GitHub and support the project!
