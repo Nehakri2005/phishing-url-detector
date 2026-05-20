@@ -17,3 +17,32 @@ The project follows a **three-tier architecture**:
 - **Database:** MongoDB
 
 ---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React.js
+- Tailwind CSS / Bootstrap
+- Axios
+
+### Backend
+- Node.js
+- Express.js
+
+### Machine Learning
+- Python
+- Flask
+- Scikit-learn
+- XGBoost
+- Pandas
+- NumPy
+
+### Database
+- MongoDB
+
+### Tools
+- Git & GitHub
+- Postman
+- VS Code
+
+---
