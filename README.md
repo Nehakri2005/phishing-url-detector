@@ -76,3 +76,27 @@ The following models were trained and evaluated:
 
 ---
 
+## 📂 Project Structure
+
+```bash
+Phishing-URL-Detection-System/
+│
+├── client/                 # React Frontend
+│
+├── server/                 # Node.js Backend
+│
+├── ml-service/             # Flask ML API
+│   ├── model/
+│   ├── app.py
+│   └── feature_extraction.py
+│
+├── database/
+│
+├── screenshots/
+│
+├── README.md
+│
+└── requirements.txt
+```
+
+---
