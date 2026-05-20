@@ -100,3 +100,62 @@ Phishing-URL-Detection-System/
 ```
 
 ---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/phishing-url-detection.git
+cd phishing-url-detection
+```
+
+---
+
+## 🔧 Backend Setup
+
+```bash
+cd server
+npm install
+npm start
+```
+
+---
+
+## 🎨 Frontend Setup
+
+```bash
+cd client
+npm install
+npm start
+```
+
+---
+
+## 🧠 ML Service Setup
+
+```bash
+cd ml-service
+
+pip install -r requirements.txt
+
+python app.py
+```
+
+---
+
+## 🌐 API Flow
+
+```text
+React Frontend
+      ↓
+Node.js Backend API
+      ↓
+Flask ML Service
+      ↓
+ML Model Prediction
+      ↓
+Response to Frontend
+```
+
+---
