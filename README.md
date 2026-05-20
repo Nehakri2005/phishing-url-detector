@@ -46,3 +46,33 @@ The project follows a **three-tier architecture**:
 - VS Code
 
 ---
+
+## ✨ Features
+
+- 🔍 Real-time phishing URL detection
+- 🤖 Machine Learning-based prediction
+- 📊 Feature extraction from URLs
+- ⚡ Fast API communication
+- 🧠 Multiple ML model evaluation
+- 📁 Prediction log storage using MongoDB
+- 📱 Responsive user interface
+
+---
+
+## 🧠 Machine Learning Models Used
+
+The following models were trained and evaluated:
+
+- Logistic Regression
+- Support Vector Machine (SVM)
+- Random Forest
+- XGBoost ✅ (Selected Best Model)
+
+### Evaluation Metrics
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+
+---
+
